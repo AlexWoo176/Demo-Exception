@@ -1,16 +1,25 @@
 package codegym;
 
+import java.util.Scanner;
+
 public class RectangleTest {
 
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
         try {
-            Rectangle rectangle = new Rectangle(17.6, 14.1);
+            System.out.println("Enter length is Triangle: ");
+            double length = scanner.nextDouble();
+
+            System.out.println("Enter width is Triangle: ");
+            double width = scanner.nextDouble();
+
+            Rectangle rectangle = new Rectangle(length, width);
             System.out.println("Area of Rectangle is " + rectangle.getArea());
         }
         catch (NegativeValueException ex)
         {
-            ex.printStackTrace();
-            System.out.println("Nagative Value Exception");
+//            ex.printStackTrace();
+            System.out.println("Nagative Value Exception" + ex.toString());
         }
     }
 }
